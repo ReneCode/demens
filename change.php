@@ -8,6 +8,7 @@
 
 <?php
 require("db.php");
+require("utility.php");
 
 // open database
 $dbCon = dbOpen();

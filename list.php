@@ -19,22 +19,26 @@
 <?php
 
 require("db.php");
+require("utility.php");
 
 $dbCon = dbOpen();
 $authorOption = getHtmlOption($dbCon, "status", "");
 
 
-$query = "select * from tblprobe order by id";
+$query = "select * from tblprobe order by status,author";
 $result = mysql_query($query, $dbCon);
 
 while ($row = mysql_fetch_assoc($result)) 
 {
+	$message = $row['message'];
+	// show CR-LF as new lines in html (<br>)
+	$message = str_replace(array("\r\n"), '<br>', $message);
 	$data = 
 		'<form method="GET" action="change.php">'.
 		sprintf('<p>%s</p>', $row['date']) . 
 		sprintf('<p>%s</p>', $row['author']) .
 		sprintf('<p>%s</p>', $row['status']) .
-		sprintf('<p>%s</p>', $row['message']) .
+		sprintf('<p>%s</p>', $message) .
 		'<div class"right"><input type="submit" value="Ändern"/></div>' .
 		sprintf('<input type="hidden" name="id" value="%s"/>', $row['id']) .
 		"</form>";
