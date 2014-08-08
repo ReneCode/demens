@@ -36,11 +36,20 @@ if ($curId > 0) {
 } 
 
 if (!$bRecordFound) {
-	$tim = time();
-	// get next dienstag
-	$tim = getNextDateWithWeekDay($tim, 2);
-	$weekDay = date('N', $tim);
-	$curDate = GetGermanWeekDay($weekDay) . ', ' . date('j.n.Y', $tim);
+	// get the date from the first record
+	$sql = sprintf("select date from tblprobe ORDER BY id LIMIT 1");
+	$result = mysql_query($sql, $dbCon);
+	$row = mysql_fetch_assoc($result);
+	if ($row) {
+		$curDate = $row['date'];
+	}
+	else {
+		$tim = time();
+		// get next dienstag
+		$tim = getNextDateWithWeekDay($tim, 2);
+		$weekDay = date('N', $tim);
+		$curDate = GetGermanWeekDay($weekDay) . ', ' . date('j.n.Y', $tim);
+	}
 }
 
 
@@ -75,7 +84,7 @@ $statusOption = getHtmlOption($dbCon, "status", $curStatus);
 
 		 	<tr>
 		 		<td class="label">Mitteilung</td>
-		 		<td class="input"><textarea cols="70" rows="10" name="message"><?php echo $curMessage ?></textarea></td>
+		 		<td class="input"><textarea cols="70" rows="15" name="message"><?php echo $curMessage ?></textarea></td>
 		 	</tr>
 
 		 	<tr>
