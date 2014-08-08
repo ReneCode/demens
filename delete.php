@@ -11,6 +11,7 @@ mysql_query($sql);
 
 dbClose();
 
+// continue in admin-mode
 $url = 'list.php?admin=1';
 header("Location: $url");
 

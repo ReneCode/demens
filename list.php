@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>List Probe</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="demens.js"></script>
 </header>
 <body>
 
@@ -29,21 +30,25 @@ $authorOption = getHtmlOption($dbCon, "status", "");
 $query = "select * from tblprobe order by status,author";
 $result = mysql_query($query, $dbCon);
 $adminHtml = "";
-if ($admin != "") {
-	$adminHtml = 
-		'<input type="submit" formaction="delete.php" value="Löschen"/>'; 
-}
 
 while ($row = mysql_fetch_assoc($result)) 
 {
 	$message = $row['message'];
+	$author = $row['author'];
 	$id = $row['id'];
 	// show CR-LF as new lines in html (<br>)
 	$message = str_replace(array("\r\n"), '<br>', $message);
+	if ($admin != "") {
+		$adminHtml = 
+			'<input type="submit" onclick="return confirmDelete(#author#);" formaction="delete.php" value="Löschen"/>'; 
+		$adminHtml = str_replace(array("#author#"), "'$author'", $adminHtml);			
+	}
+
+
 	$data = 
 		'<form method="GET" action="change.php">'.
 		sprintf('<p>%s</p>', $row['date']) . 
-		sprintf('<p>%s</p>', $row['author']) .
+		sprintf('<p>%s</p>', $author) .
 		sprintf('<p>%s</p>', $row['status']) .
 		sprintf('<p>%s</p>', $message) .
 		'<input type="submit" value="Ändern"/>' .
