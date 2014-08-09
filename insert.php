@@ -6,6 +6,8 @@ $date = $_POST[date];
 $author = $_POST[author];
 $status = $_POST[status];
 $message = $_POST[message];
+// convert ' to ''    for sql command
+$message = str_replace(array("'"), "''", $message);
 $id = $_POST[id];
 
 $dbCon = dbOpen();
