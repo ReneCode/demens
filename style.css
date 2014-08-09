@@ -1,6 +1,6 @@
 body {
-  font-family: verdana;
-  font-size: 11px;
+  font-family: Arial,Helvetica,Geneva,Sans-serif,sans-serif;
+  font-size: 0.8em;
 }
 
 .table {
@@ -33,11 +33,10 @@ tr {
 }
 
 .label {
-  width: 30%;
+  width: 20%;
   min-width: 50px;
   max-width: 200px;
   background-color: #e3e4ea;
-  font-weight: bold;
   vertical-align: top;
   padding: 5px;
 }
@@ -46,12 +45,28 @@ tr {
   min-width: 70%
 }
 
-
-
 .listdata {
-  border: 1px solid black;
-  font-weight: bold;
+  border: 2px solid #888888;
   background-color: #e3e4ea;
   padding: 5px;
 }
 
+.list-top {
+  margin: 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #bbbbbb;
+}
+
+.date {
+  float: left;
+  width: 35%;
+}
+
+.author {
+  float: left;
+  width: 25%;
+}
+
+.message {
+  margin: 5px;
+}

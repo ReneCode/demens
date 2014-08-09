@@ -47,10 +47,13 @@ while ($row = mysql_fetch_assoc($result))
 
 	$data = 
 		'<form method="GET" action="change.php">'.
-		sprintf('<p>%s</p>', $row['date']) . 
-		sprintf('<p>%s</p>', $author) .
-		sprintf('<p>%s</p>', $row['status']) .
-		sprintf('<p>%s</p>', $message) .
+		'<div class="list-top">' .
+		sprintf('<div class="date">%s</div>', $row['date']) . 
+		sprintf('<div class="author">%s</div>', $author) .
+		sprintf('<div class="status">%s</div>', $row['status']) .
+		'</div><div class="list-bottom">' .
+		sprintf('<div class="message">%s</div>', $message) .
+		'</div>' .
 		'<input type="submit" value="Ändern"/>' .
 		sprintf('<input type="hidden" name="id" value="%s"/>', $id) .
 		$adminHtml .
