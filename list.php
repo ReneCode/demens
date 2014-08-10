@@ -9,13 +9,13 @@
 <body>
 
 	<div>
-		<form method="GET" action="change.php">
-		<div class"right"><input type="submit" value="Neuer Eintrag"/></div>
-		</form>
-	</div>
-	<div>
 	 	<table class="table">
 		 <tbody>
+		 	<tr><td>
+				<form method="GET" action="change.php">
+				<div class"right"><input type="submit" value="Neuer Eintrag"/></div>
+				</form>
+		 	</td></tr>
 
 <?php
 

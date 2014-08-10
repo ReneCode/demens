@@ -70,3 +70,52 @@ tr {
 .message {
   margin: 5px;
 }
+
+
+input[type=text] {
+  padding:5px; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+input[type=text]:focus {
+  border-color:#333; 
+}
+
+textarea {
+  padding:5px; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-family: Arial,Helvetica,Geneva,Sans-serif,sans-serif;
+}
+
+textarea:focus {
+  border-color:#333; 
+}
+
+
+select {
+  padding:5px; 
+  border:2px solid #ccc; 
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-family: Arial,Helvetica,Geneva,Sans-serif,sans-serif;
+}
+
+select:focus {
+  border-color:#333; 
+}
+
+input[type=submit] {
+  padding:5px 15px; 
+  background:#eeeeee; 
+  margin-right: 10px;
+  border:1 none;
+  cursor:pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; 
+  min-width:80px;
+}
+
