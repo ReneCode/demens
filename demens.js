@@ -8,3 +8,8 @@ function confirmDelete(msg) {
 		return false;
 	}
 }
+
+
+function goBack() {
+    window.history.back();
+}

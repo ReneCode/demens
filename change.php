@@ -91,6 +91,7 @@ $statusOption = getHtmlOption($dbCon, "status", $curStatus);
 		 		<td></td>
 		 		<td>
 				<input type="hidden" name="id" value="<?php echo $curId ?>"/>
+				<input type="submit" onclick="goBack(); retun false;" value="Zurück"/>
 		 		<input type="submit" value="Absenden"/>
 		 		</td>
 		 	</tr>
