@@ -9,7 +9,12 @@ function confirmDelete(msg) {
 	}
 }
 
+function checkValues(form) {
+
+	return true;
+}
 
 function goBack() {
     window.history.back();
+    return false;
 }

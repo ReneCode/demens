@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>Eintrag Probe</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="demens.js"></script>
 </header>
 
 <?php
@@ -60,7 +61,7 @@ $statusOption = getHtmlOption($dbCon, "status", $curStatus);
 ?>
 <body>
 	<div>
-	<form method="POST" action="insert.php">
+	<form method="POST" action="insert.php" onSubmit="return checkValues(this);">
 	 <table class="table">
 		 <tbody>
 		 	<tr>
@@ -91,7 +92,7 @@ $statusOption = getHtmlOption($dbCon, "status", $curStatus);
 		 		<td></td>
 		 		<td>
 				<input type="hidden" name="id" value="<?php echo $curId ?>"/>
-				<input type="submit" onclick="goBack(); retun false;" value="Zurück"/>
+				<input type="submit" onclick="return goBack();" value="Zurück"/>
 		 		<input type="submit" value="Absenden"/>
 		 		</td>
 		 	</tr>

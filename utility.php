@@ -5,10 +5,12 @@ function dbGetOption($dbCon, $name) {
 	$arr = array();
 	$sql = sprintf("select val from tbloption where name='%s' order by val", $name);
 	$result = mysql_query($sql, $dbCon);
-	while ($row = mysql_fetch_assoc($result)) 
-	{
-		$val = $row['val']; 
-		array_push($arr, $val); 
+	if ($result) {
+		while ($row = mysql_fetch_assoc($result)) 
+		{
+			$val = $row['val']; 
+			array_push($arr, $val); 
+		}
 	}
 	return $arr;
 }
