@@ -66,20 +66,20 @@ $statusOption = getHtmlOption($dbCon, "status", $curStatus);
 		 <tbody>
 		 	<tr>
 		 		<td class="label">Datum</td>
-		 		<td class="input"><input type="text" name="date" value="<?php echo $curDate ?>"/></td>
+		 		<td id="date" class="input"><input type="text" name="date" value="<?php echo $curDate ?>"/></td>
 		 	</tr>
 
 		 	<tr>
 		 		<td class="label">Eintrag von</td>
 		 		<td class="input">
-		 		 <select name="author"><?php echo $authorOption ?></select>
+		 		 <select id="author" name="author"><?php echo $authorOption ?></select>
 		 		</td>
 		 	</tr>
 
 		 	<tr>
 		 		<td class="label">Status</td>
 		 		<td class="input">
-		 		 <select name="status"><?php echo $statusOption ?></select>
+		 		 <select id="status" name="status"><?php echo $statusOption ?></select>
 		 		</td>
 		 	</tr>
 
